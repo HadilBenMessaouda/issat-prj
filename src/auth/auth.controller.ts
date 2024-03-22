@@ -19,6 +19,7 @@ export class AuthController {
         return this.authService.registerUser(regDto);
 
     }
+    @UseGuards(JwtAuthGuard)
     @Post('login')
     signin(@Body(ValidationPipe) loginDTO: UserLoginDto){
         return this.authService.loginUser(loginDTO);
