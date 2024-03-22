@@ -1,0 +1,157 @@
+/* styles.css */
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('bg2.png'); /* Ajouter votre image de fond */
+  background-size: cover; /* Ajuster la taille de l'image pour couvrir tout le conteneur */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  height: 100vh; /* Taille de la fenêtre visible */
+}
+
+.cont {
+  width: 100%; 
+  height: 100%;/* Faire en sorte que le conteneur soit en largeur totale */
+  max-width: 700px;
+  padding: 20px;
+  background-color: #ffffff; /* Fond blanc */
+  border-radius: 8px;
+  
+  display: flex;
+  flex-direction: column; /* Pour aligner les éléments verticalement */
+  align-items: center; /* Pour centrer les éléments horizontalement */
+}
+.cont1 {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #ffffff; /* Fond blanc */
+  border-radius: 8px;
+  box-shadow: 0 10px 70px #fafafa; /* Ombre légère */
+  display: flex;
+  flex-direction: column; /* Pour aligner les éléments verticalement */
+  align-items: center; /* Pour centrer les éléments horizontalement */
+}
+
+h2 {
+  color: #e69111; /* Couleur bleue pour les titres */
+  text-align: center; /* Centrer le titre */
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ajuster la largeur du formulaire */
+}
+
+.label-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px; /* Augmenter la marge pour séparer les champs */
+}
+
+label{
+  margin-right: 14px; /* Espace entre le label et la zone de texte */
+  flex: 1; /* Pour que les labels aient la même largeur */
+}
+.email-label{
+  margin-right: 45px; /* Espace entre le label et la zone de texte */
+  flex: 1; /* Pour que les labels aient la même largeur */
+}
+.password-label{
+  margin-right: 14px; /* Espace entre le label et la zone de texte */
+  flex: 1; /* Pour que les labels aient la même largeur */
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 220px; /* Définir la largeur sur 100% */
+  height: 6px; /* Définir la hauteur sur 40 pixels */
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1; /* Pour que les zones de texte aient la même largeur */
+}
+
+/* Ajouter un padding pour améliorer l'apparence */
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #e3a444;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #ccc;
+}
+
+button[type="submit"] {
+ 
+  padding: 10px 18px;
+  background-color: #0a2e52; /* Boutons bleus */
+  color: #ffffff; /* Texte blanc */
+  border: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  
+  cursor: pointer;
+}
+
+button[type="button"] {
+  padding: 10px 18px;
+  background-color: #ffffff; /* Boutons bleus */
+  color: #0a2e52; /* Texte blanc */
+  border: none;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  padding: 10px 18px;
+  background-color: #e69111; /* Boutons bleus */
+  color: #0a2e52; /* Texte blanc */
+  border: none;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  cursor: pointer; /* Légère variation de couleur au survol */
+}
+
+button[type="button"]:hover {
+  background-color: #0a2e52;
+  color: #e69111; /* Légère variation de couleur au survol */
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #eef2f6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: #f8fafc;
+}
+
+.form-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 10px; /* Ajout de marge en bas */
+}
+
+.form-image-container img {
+  max-width: 100%; /* Pour s'assurer que l'image ne dépasse pas la largeur du conteneur */
+}
