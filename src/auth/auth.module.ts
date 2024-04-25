@@ -1,11 +1,14 @@
 import { Module } from '@nestjs/common';
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
+
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserEntity } from 'src/entity/user.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { JwtCustomStrategy } from './jwt-custom.strategy';
+import { JwtCustomStrategy } from '../strategy/jwt-custom.strategy';
+import { RolesGuard } from 'src/guards/roles.guard';
+import { TokenBlacklistService } from '../auth/tokenBlacklist.service';
+import { AuthService } from './auth.service';
+import { AuthController } from './auth.controller';
+import { UserEntity } from './user.entity';
 
 @Module({
   imports: [
@@ -21,8 +24,9 @@ import { JwtCustomStrategy } from './jwt-custom.strategy';
       defaultStrategy: 'jwt'
     })
   ],
-  providers: [AuthService,JwtCustomStrategy],
-  controllers: [AuthController]
+  providers: [AuthService,JwtCustomStrategy,RolesGuard,TokenBlacklistService],
+  controllers: [AuthController],
+  exports: [PassportModule,JwtCustomStrategy]
   
 })
 export class AuthModule {}

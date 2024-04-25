@@ -1,9 +1,20 @@
-import { IsNotEmpty, Matches, MaxLength, MinLength } from "class-validator";
+import { IsEmail, IsNotEmpty, Matches, MaxLength, MinLength } from "class-validator";
 
 export class registerUserDto {
 
-    @IsNotEmpty()
+    
+  cin: Number;
+  firstname: string;
+  lastname: string;
+  birthDate: Date;
+  imagePath: string;
+  @IsNotEmpty()
     username: string;
+
+    @IsNotEmpty()
+    @IsEmail()
+    email: string;
+
     
     @IsNotEmpty()
     @MinLength(6) @MaxLength (12)
